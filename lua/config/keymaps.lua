@@ -4,16 +4,21 @@
 -- Open compiler
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>rc",
+  "<leader>cc",
   "<cmd>CompilerOpen<cr>",
-  { noremap = true, silent = true, desc = "Compile or Run code" }
+  { noremap = true, silent = true, desc = "Compile and/or Run code" }
 )
 
 -- Redo last selected option
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>rC",
+  "<leader>cC",
   "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
     .. "<cmd>CompilerRedo<cr>",
   { noremap = true, silent = true }
 )
+
+-- Toggle compiler results
+vim.api.nvim_set_keymap("n", "<leader>cd", "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>cp", "<cmd>Soil<cr>", { noremap = true, silent = true, desc = "Soil plantuml" })
+vim.api.nvim_set_keymap("n", "<leader>ct", "<cmd>Trouble<cr>", { noremap = true, silent = true, desc = "Trouble" })
