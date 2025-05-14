@@ -1,7 +1,7 @@
 return {
   -- add colorscheme:
   { "ellisonleao/gruvbox.nvim" },
-  { "marko-cerovac/material.nvim" },
+  { "sainnhe/gruvbox-material" },
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -12,7 +12,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin-frappe",
+      colorscheme = "gruvbox-material",
     },
   },
   -- file manager:
