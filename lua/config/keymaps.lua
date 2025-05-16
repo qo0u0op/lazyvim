@@ -20,5 +20,6 @@ vim.api.nvim_set_keymap(
 
 -- Toggle compiler results
 vim.api.nvim_set_keymap("n", "<leader>ct", "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>cP", "<cmd>Soil<cr>", { noremap = true, silent = true, desc = "Soil plantuml" })
 vim.api.nvim_set_keymap("n", "<leader>cT", "<cmd>Trouble<cr>", { noremap = true, silent = true, desc = "Trouble" })
+-- Plantuml Soil
+vim.api.nvim_set_keymap("n", "<leader>cP", "<cmd>Soil<cr>", { noremap = true, silent = true, desc = "Soil plantuml" })
