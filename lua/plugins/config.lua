@@ -24,6 +24,10 @@ return {
       end
     end,
   },
+  {
+    "linux-cultist/venv-selector.nvim",
+    branch = "main",
+  },
   -- import Lazyvim extras:
   { import = "lazyvim.plugins.extras.coding.yanky" },
   { import = "lazyvim.plugins.extras.editor.fzf" },
