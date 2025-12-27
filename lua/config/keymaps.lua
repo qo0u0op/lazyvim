@@ -9,6 +9,8 @@ local unmap = vim.keymap.del
 unmap("n", "<leader>cd") --> move to diagnostics/quickfix
 unmap("n", "<C-w>d")
 unmap("n", "<C-w><C-d>")
+unmap("n", "<leader>e")
+unmap("n", "<leader>E")
 -- Restore default window management keymaps
 map("n", "<C-w>d", "<C-w>c", { desc = "Delete window" })
 map("n", "<leader>wd", "<C-w>c", { desc = "Delete window" })
