@@ -5,9 +5,7 @@ return {
       settings = {
         java = {
           configuration = {
-            maven = {
-              userSettings = vim.fn.expand("~/.config/maven/settings.xml"),
-            },
+            maven = { userSettings = vim.fn.expand("~/.config/maven/settings.xml") },
           },
         },
       },
