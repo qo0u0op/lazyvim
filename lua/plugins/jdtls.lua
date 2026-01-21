@@ -1,4 +1,7 @@
+local xdg_config = vim.env.XDG_CONFIG_HOME or vim.fn.expand("~/.config")
+
 return {
+
   {
     "mfussenegger/nvim-jdtls",
     opts = {
@@ -11,11 +14,11 @@ return {
           },
           jdt = {
             ls = {
-              vmargs = table.concat({
-                "-Djava.util.prefs.userRoot=" .. vim.env.XDG_CONFIG_HOME .. "/java",
+              vmargs = {
+                "-Djava.util.prefs.userRoot=" .. xdg_config .. "/java",
                 -- "-Xmx2g",
                 -- "-Xms512m",
-              }, " "),
+              },
             },
           },
         },
