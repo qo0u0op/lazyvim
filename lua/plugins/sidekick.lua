@@ -25,6 +25,7 @@ return {
     keys = {
       {
         "<tab>",
+        false,
       },
       {
         "<c-.>",
@@ -33,19 +34,21 @@ return {
       },
       {
         "<leader>aa",
-        function()
-          require("sidekick.cli").toggle()
-        end,
-        desc = "Sidekick Toggle CLI",
+        false,
+        -- function()
+        --   require("sidekick.cli").toggle()
+        -- end,
+        -- desc = "Sidekick Toggle CLI",
       },
       {
         "<leader>as",
-        function()
-          require("sidekick.cli").select()
-        end,
+        false,
+        -- function()
+        --   require("sidekick.cli").select()
+        -- end,
         -- Or to select only installed tools:
         -- require("sidekick.cli").select({ filter = { installed = true } })
-        desc = "Select CLI",
+        -- desc = "Select CLI",
       },
       {
         "<leader>ad",
