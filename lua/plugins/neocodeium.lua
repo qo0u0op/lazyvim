@@ -46,7 +46,33 @@ return {
       -- and `false` if the buffer should be disabled
       -- You can still enable disabled by this option buffer with `:NeoCodeium enable_buffer`
       filter = function(bufnr)
-        return true
+        -- List of patterns to ignore.
+        -- We use string.find, which supports basic pattern matching.
+        -- Setting ignore sicret files to disable codeium.
+        local ignore_patterns = {
+          "/home/d0w0b/.ssh/",
+          "/home/d0w0b/.local/share/gnupg/",
+          "/home/d0w0b/.local/share/kwalletd/",
+          "environment.zsh$", -- The '$' anchors the match to the end of the string.
+        }
+
+        local buf_name = vim.api.nvim_buf_get_name(bufnr)
+        if buf_name == "" then
+          return true
+        end
+
+        -- Get the full, absolute path of the buffer.
+        local full_path = vim.fn.fnamemodify(buf_name, ":p")
+
+        for _, pattern in ipairs(ignore_patterns) do
+          if string.find(full_path, pattern) then
+            -- Uncomment the next line for debugging to see which files are being ignored.
+            -- vim.notify("NeoCodeium disabled for: " .. full_path, vim.log.levels.WARN)
+            return false -- Disable Codeium if a pattern matches.
+          end
+        end
+
+        return true -- Enable Codeium for all other files.
       end,
       -- Set to `false` to disable suggestions in buffers with specific filetypes
       -- You can still enable disabled by this option buffer with `:NeoCodeium enable_buffer`
@@ -59,8 +85,8 @@ return {
       -- List of directories and files to detect workspace root directory for Windsurf Chat
       root_dir = { ".bzr", ".git", ".hg", ".svn", "_FOSSIL_", "package.json" },
     },
-    config = function()
-      require("neocodeium").setup()
+    config = function(_, opts)
+      require("neocodeium").setup(opts)
       vim.api.nvim_set_hl(0, "NeoCodeiumSuggestion", { fg = "#627C62" })
       vim.api.nvim_set_hl(0, "NeoCodeiumLabel", { link = "DiagnosticInfo", reverse = true })
       vim.api.nvim_set_hl(0, "NeoCodeiumSingleLineLabel", { fg = "#808080", bold = true })
@@ -68,7 +94,7 @@ return {
     keys = {
       -- 控制按鍵
       {
-        "<leader>af",
+        "<leader>aa",
         function()
           require("neocodeium") -- 觸發加載
           vim.notify("NeoCodeium activated!", vim.log.levels.INFO)
