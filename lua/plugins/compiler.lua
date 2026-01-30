@@ -7,17 +7,17 @@ return {
     ft = { "rust", "python", "c", "r", "typescript" },
     keys = {
       {
-        "<leader>ci",
+        "<leader>cii",
         "<cmd>CompilerOpen<cr>",
         desc = "Compile and/or Run code",
       },
       {
-        "<leader>cI",
+        "<leader>ciI",
         "<cmd>CompilerStop<cr><cmd>CompilerRedo<cr>",
         desc = "Compile Stop/Redo",
       },
       {
-        "<leader>ct",
+        "<leader>cit",
         "<cmd>CompilerToggleResults<cr>",
         desc = "Toggle compiler results",
       },
