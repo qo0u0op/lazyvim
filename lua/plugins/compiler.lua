@@ -4,7 +4,7 @@ return {
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo", "CompilerStop" },
     dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
     opts = {},
-    ft = { "rust", "python", "c", "r", "typescript" },
+    ft = { "rust", "python", "c", "typescript" },
     keys = {
       {
         "<leader>cii",
