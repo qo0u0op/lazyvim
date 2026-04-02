@@ -12,6 +12,7 @@ return {
         "clangd",
         "cortex-debug",
         "debugpy",
+        "djlint",
         "google-java-format",
         "java-debug-adapter",
         "java-test",
