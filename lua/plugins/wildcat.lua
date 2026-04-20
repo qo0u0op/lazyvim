@@ -1,10 +1,13 @@
 return {
-  "javiorfo/nvim-wildcat",
+  "https://codeberg.org/caskstrength/nvim-wildcat.git",
   lazy = true,
   cmd = { "WildcatRun", "WildcatUp", "WildcatServer" },
   ft = { "java" },
   event = { "BufReadPost pom.xml", "BufReadPost build.gradle" },
-  dependencies = { "javiorfo/nvim-popcorn", "javiorfo/nvim-spinetta" },
+  dependencies = {
+    "https://codeberg.org/caskstrength/nvim-popcorn.git",
+    "https://codeberg.org/caskstrength/nvim-spinetta.git",
+  },
   keys = {
     {
       "<leader>cwr",
@@ -44,7 +47,7 @@ return {
     -- Default path CATALINA_HOME from the system
     -- Default app_base "webapps"
     tomcat = {
-      path = " ~/.local/share/asdf/installs/tomcat/10.1.52/",
+      -- path = " ~/.local/share/asdf/installs/tomcat/10.1.52/",
       app_base = "webapps",
     },
   },
