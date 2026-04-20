@@ -22,7 +22,7 @@ return {
       },
     },
     keys = {
-      { "<leader>T", "<cmd>Leet<cr>", desc = "LeetCode Menu" },
+      { "<leader>cT", "<cmd>Leet<cr>", desc = "LeetCode Menu" },
     },
     config = function(_, opts)
       require("leetcode").setup(opts)
