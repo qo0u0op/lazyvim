@@ -4,7 +4,10 @@ return {
     -- Optional for puml syntax highlighting:
     dependencies = { "https://codeberg.org/caskstrength/nvim-nyctophilia.git" },
     ft = "plantuml",
-    keys = { { "<leader>cp", "<cmd>Soil<cr>", desc = "Soil plantuml" } },
+    keys = {
+      { "<leader>tt", group = "Preview" },
+      { "<leader>tpp", "<cmd>Soil<cr>", desc = "Soil plantuml" },
+    },
     opts = {
       actions = {
         redraw = false,
