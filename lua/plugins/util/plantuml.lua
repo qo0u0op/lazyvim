@@ -12,7 +12,7 @@ return {
         redraw = false,
       },
       image = {
-        format = "svg",
+        format = "png",
         darkmode = false,
       },
     },
