@@ -6,8 +6,8 @@ local map = vim.keymap.set
 
 -- Helper to safely unmap or disable
 local function disable(mode, lhs)
-  pcall(vim.keymap.del, mode, lhs) -- 嘗試刪除
-  map(mode, lhs, "<nop>", { desc = "Disabled" }) -- 徹底禁用
+  pcall(vim.keymap.del, mode, lhs) -- try to disable
+  map(mode, lhs, "<nop>", { desc = "Disabled" }) -- disable
 end
 
 -- Disable conflicting keymaps
@@ -21,6 +21,9 @@ disable("n", "<leader>|")
 disable("n", "<leader>`")
 disable("n", "<leader>D")
 disable("n", "<leader>L")
+disable("n", "<leader>d2")
+disable("n", "<leader>rd2")
+disable("n", "<leader>yd2")
 
 -- Restore / Redefine window management
 map("n", "<C-w>d", "<C-w>c", { desc = "Delete window" })
