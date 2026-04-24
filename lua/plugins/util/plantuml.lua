@@ -5,7 +5,6 @@ return {
     dependencies = { "https://codeberg.org/caskstrength/nvim-nyctophilia.git" },
     ft = "plantuml",
     keys = {
-      { "<leader>tt", group = "Preview" },
       { "<leader>tpp", "<cmd>Soil<cr>", desc = "Soil plantuml" },
     },
     opts = {
